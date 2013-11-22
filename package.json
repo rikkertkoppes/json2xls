@@ -2,9 +2,9 @@
   "name": "json2xls",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/json2xls.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine-node spec"
   },
   "author": "",
   "license": "BSD-2-Clause",
