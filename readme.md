@@ -23,12 +23,25 @@ Use to save as file:
 
     var xls = json2xls(json);
 
-    fs.writeFileSync('data.xlsx',xls,'binary');
+    fs.writeFileSync('data.xlsx', xls, 'binary');
 
 Or use as express middleware. It adds a convenience `xls` method to the response object to immediately output an excel as download.
+
+    var jsonArr = [{
+        foo: 'bar',
+        qux: 'moo',
+        poo: 123,
+        stux: new Date()
+    },
+    {
+        foo: 'bar',
+        qux: 'moo',
+        poo: 345,
+        stux: new Date()
+    }];
 
     app.use(json2xls.middleware);
 
     app.get('/',function(res) {
-        res.xls('data.xlsx',json);
+        res.xls('data.xlsx', jsonArr);
     });
