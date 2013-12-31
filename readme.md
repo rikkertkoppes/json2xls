@@ -1,6 +1,8 @@
 json2xls
 ========
 
+[![Build Status](https://travis-ci.org/rikkertkoppes/json2xls.png?branch=master)](https://travis-ci.org/rikkertkoppes/json2xls)
+
 utility to convert json to a excel file, based on [Node-Excel-Export](https://github.com/functionscope/Node-Excel-Export)
 
 Installation
