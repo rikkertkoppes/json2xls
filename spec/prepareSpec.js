@@ -5,6 +5,26 @@ var objectData = require('./objectData.json');
 
 describe('prepare',function() {
 
+    beforeEach(function() {
+        this.addMatchers({
+            toEqualFields: function() {
+                return {
+                    compare: function(actual,expected) {
+                        var res;
+                        var res = expected && expected.all && expected.all(function(item,i) {
+                            return actual[i] && Object.keys(item).all(function(field) {
+                                return actual[i][field] === item[field];
+                            });
+                        })
+                        return {
+                            pass: res
+                        }
+                    }
+                }
+            }
+        })
+    })
+
     describe('when the data is an array', function() {
         
         describe('cols',function() {
@@ -14,18 +34,15 @@ describe('prepare',function() {
             });
             it('should create the correct cols',function() {
                 var res = prep(arrayData);
-                expect(res.cols).toEqual([{
+                expect(res.cols).toEqualFields([{
                     caption: 'name',
-                    type: 'string',
-                    beforeCellWrite: json2xls.beforeCellWrite
+                    type: 'string'
                 },{
                     caption: 'date',
-                    type: 'string',
-                    beforeCellWrite: json2xls.beforeCellWrite
+                    type: 'string'
                 },{
                     caption: 'number',
-                    type: 'number',
-                    beforeCellWrite: json2xls.beforeCellWrite
+                    type: 'number'
                 }]);
             });
 
@@ -33,14 +50,12 @@ describe('prepare',function() {
                 var res = prep(arrayData,{
                     fields: ['date','name']
                 });
-                expect(res.cols).toEqual([{
+                expect(res.cols).toEqualFields([{
                     caption: 'date',
-                    type: 'string',
-                    beforeCellWrite: json2xls.beforeCellWrite
+                    type: 'string'
                 },{
                     caption: 'name',
-                    type: 'string',
-                    beforeCellWrite: json2xls.beforeCellWrite
+                    type: 'string'
                 }]);
             });
 
@@ -51,14 +66,12 @@ describe('prepare',function() {
                         name: 'string'
                     }
                 });
-                expect(res.cols).toEqual([{
+                expect(res.cols).toEqualFields([{
                     caption: 'number',
-                    type: 'string',
-                    beforeCellWrite: json2xls.beforeCellWrite
+                    type: 'string'
                 },{
                     caption: 'name',
-                    type: 'string',
-                    beforeCellWrite: json2xls.beforeCellWrite
+                    type: 'string'
                 }]);
             });
 
