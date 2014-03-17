@@ -1,6 +1,6 @@
 {
   "name": "json2xls",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "canonically transform json to an excel document",
   "main": "lib/json2xls.js",
   "scripts": {
@@ -10,6 +10,6 @@
   "author": "Rikkert Koppes <rikkert@rikkertkoppes.com",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "excel-export": "~0.3.7"
+    "excel-export": "~0.3.11"
   }
 }

@@ -1,4 +1,5 @@
-var prep = require('../lib/json2xls').prepareJson;
+var json2xls = require('../lib/json2xls');
+var prep = json2xls.prepareJson;
 var arrayData = require('./arrayData.json');
 var objectData = require('./objectData.json');
 
@@ -16,12 +17,15 @@ describe('prepare',function() {
                 expect(res.cols).toEqual([{
                     caption: 'name',
                     type: 'string',
+                    beforeCellWrite: json2xls.beforeCellWrite
                 },{
                     caption: 'date',
                     type: 'string',
+                    beforeCellWrite: json2xls.beforeCellWrite
                 },{
                     caption: 'number',
                     type: 'number',
+                    beforeCellWrite: json2xls.beforeCellWrite
                 }]);
             });
 
@@ -32,9 +36,11 @@ describe('prepare',function() {
                 expect(res.cols).toEqual([{
                     caption: 'date',
                     type: 'string',
+                    beforeCellWrite: json2xls.beforeCellWrite
                 },{
                     caption: 'name',
                     type: 'string',
+                    beforeCellWrite: json2xls.beforeCellWrite
                 }]);
             });
 
@@ -48,9 +54,11 @@ describe('prepare',function() {
                 expect(res.cols).toEqual([{
                     caption: 'number',
                     type: 'string',
+                    beforeCellWrite: json2xls.beforeCellWrite
                 },{
                     caption: 'name',
                     type: 'string',
+                    beforeCellWrite: json2xls.beforeCellWrite
                 }]);
             });
 
