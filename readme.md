@@ -47,3 +47,18 @@ Or use as express middleware. It adds a convenience `xls` method to the response
     app.get('/',function(res) {
         res.xls('data.xlsx', jsonArr);
     });
+
+Options
+-------
+
+As a second parameter to `json2xls` or a third parameter to `res.xls`, a map of options can be passed:
+
+    var xls = json2xls(json, options);
+    res.xls('data.xlsx', jsonArr, options);
+
+The following options are supported:
+
+    - style: a styles xml file, see <https://github.com/functionscope/Node-Excel-Export>
+    - fields: either an array or map containing field configuration:
+        - array: a list of names of fields to be exported, in that order
+        - object: a map of names of fields to be exported and the types of those fields. Supported types are 'number','string','bool'

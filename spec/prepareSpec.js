@@ -24,6 +24,36 @@ describe('prepare',function() {
                     type: 'number',
                 }]);
             });
+
+            it('should create the correct cols when fields are given as array',function() {
+                var res = prep(arrayData,{
+                    fields: ['date','name']
+                });
+                expect(res.cols).toEqual([{
+                    caption: 'date',
+                    type: 'string',
+                },{
+                    caption: 'name',
+                    type: 'string',
+                }]);
+            });
+
+            it('should create the correct cols when fields are given as object',function() {
+                var res = prep(arrayData,{
+                    fields: {
+                        number: 'string',
+                        name: 'string'
+                    }
+                });
+                expect(res.cols).toEqual([{
+                    caption: 'number',
+                    type: 'string',
+                },{
+                    caption: 'name',
+                    type: 'string',
+                }]);
+            });
+
             it('should create caption and type field',function() {
                 var cols = prep(arrayData).cols;
                 expect(cols[0].caption).toBeDefined();
