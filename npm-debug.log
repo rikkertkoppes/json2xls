@@ -1,0 +1,87 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\NodeJS\\\\node.exe',
+1 verbose cli   'C:\\NodeJS\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'excel-export-impro' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 verbose node symlink C:\NodeJS\\node.exe
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ 'excel-export-impro', null ]
+7 verbose cache add name=undefined spec="excel-export-impro" args=["excel-export-impro",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'excel-export-impro',
+8 verbose parsed url   path: 'excel-export-impro',
+8 verbose parsed url   href: 'excel-export-impro' }
+9 silly lockFile c9289422-excel-export-impro excel-export-impro
+10 verbose lock excel-export-impro C:\Users\chris\AppData\Roaming\npm-cache\c9289422-excel-export-impro.lock
+11 silly lockFile c9289422-excel-export-impro excel-export-impro
+12 silly lockFile c9289422-excel-export-impro excel-export-impro
+13 verbose addNamed [ 'excel-export-impro', '' ]
+14 verbose addNamed [ null, '*' ]
+15 silly lockFile 42201936-excel-export-impro excel-export-impro@
+16 verbose lock excel-export-impro@ C:\Users\chris\AppData\Roaming\npm-cache\42201936-excel-export-impro.lock
+17 silly addNameRange { name: 'excel-export-impro', range: '*', hasData: false }
+18 verbose request where is /excel-export-impro
+19 verbose request registry https://registry.npmjs.org/
+20 verbose request id 5660ed893919a68a
+21 verbose url raw /excel-export-impro
+22 verbose url resolving [ 'https://registry.npmjs.org/', './excel-export-impro' ]
+23 verbose url resolved https://registry.npmjs.org/excel-export-impro
+24 verbose request where is https://registry.npmjs.org/excel-export-impro
+25 info trying registry request attempt 1 at 15:59:00
+26 http GET https://registry.npmjs.org/excel-export-impro
+27 http 404 https://registry.npmjs.org/excel-export-impro
+28 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+28 verbose headers   'content-type': 'application/json',
+28 verbose headers   'cache-control': 'max-age=0',
+28 verbose headers   'content-length': '51',
+28 verbose headers   'accept-ranges': 'bytes',
+28 verbose headers   date: 'Wed, 27 May 2015 20:59:01 GMT',
+28 verbose headers   via: '1.1 varnish',
+28 verbose headers   age: '0',
+28 verbose headers   connection: 'keep-alive',
+28 verbose headers   'x-served-by': 'cache-ord1732-ORD',
+28 verbose headers   'x-cache': 'MISS',
+28 verbose headers   'x-cache-hits': '0',
+28 verbose headers   'x-timer': 'S1432760341.359171,VS0,VE71' }
+29 silly registry.get cb [ 404,
+29 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+29 silly registry.get     'content-type': 'application/json',
+29 silly registry.get     'cache-control': 'max-age=0',
+29 silly registry.get     'content-length': '51',
+29 silly registry.get     'accept-ranges': 'bytes',
+29 silly registry.get     date: 'Wed, 27 May 2015 20:59:01 GMT',
+29 silly registry.get     via: '1.1 varnish',
+29 silly registry.get     age: '0',
+29 silly registry.get     connection: 'keep-alive',
+29 silly registry.get     'x-served-by': 'cache-ord1732-ORD',
+29 silly registry.get     'x-cache': 'MISS',
+29 silly registry.get     'x-cache-hits': '0',
+29 silly registry.get     'x-timer': 'S1432760341.359171,VS0,VE71' } ]
+30 silly lockFile 42201936-excel-export-impro excel-export-impro@
+31 silly lockFile 42201936-excel-export-impro excel-export-impro@
+32 error 404 404 Not Found: excel-export-impro
+32 error 404
+32 error 404 'excel-export-impro' is not in the npm registry.
+32 error 404 You should bug the author to publish it
+32 error 404 It was specified as a dependency of 'json2xls'
+32 error 404
+32 error 404 Note that you can also install from a
+32 error 404 tarball, folder, or http url, or git url.
+33 error System Windows_NT 6.2.9200
+34 error command "C:\\NodeJS\\\\node.exe" "C:\\NodeJS\\node_modules\\npm\\bin\\npm-cli.js" "install" "--save" "excel-export-impro"
+35 error cwd C:\Users\chris\Dropbox\Work\Projects\.github\json2xls
+36 error node -v v0.10.35
+37 error npm -v 1.4.28
+38 error code E404
+39 verbose exit [ 1, true ]
