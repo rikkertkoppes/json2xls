@@ -18,7 +18,8 @@ Use to save as file:
     var json2xls = require('json2xls');
     var json = {
         foo: 'bar',
-        qux: 'moo',
+        qux: 'http://www.example.com', /* string column values that start with https?:
+                                          will be automatically converted to hyperlinks */
         poo: 123,
         stux: new Date()
     }
