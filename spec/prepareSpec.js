@@ -108,7 +108,6 @@ describe('prepare',function() {
     });
 
     describe('when the data is an object', function() {
-        
         describe('cols',function() {
             it('should create a cols part',function() {
                 var res = prep(objectData);
@@ -138,5 +137,21 @@ describe('prepare',function() {
             });
         });
 
+        describe('display of nested fields',function() {
+            it('should write nested fields as json',function() {
+                var res = prep(objectData);
+                expect(res.rows[0][3]).toEqual('{"field":"foo"}');
+            });
+        });
+    });
+
+
+    describe('prepping with config',function() {
+        it('should get a nested field',function() {
+            var res = prep(objectData,{
+                fields:['nested.field']
+            });
+            expect(res.rows[0]).toEqual(['foo']);
+        })
     });
 });
