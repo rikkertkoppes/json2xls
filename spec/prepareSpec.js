@@ -2,6 +2,7 @@ var json2xls = require('../lib/json2xls');
 var prep = json2xls.prepareJson;
 var arrayData = require('./arrayData.json');
 var objectData = require('./objectData.json');
+var weirdData = require('./weirdData');
 
 describe('prepare',function() {
 
@@ -24,6 +25,13 @@ describe('prepare',function() {
             }
         })
     })
+
+    describe('handling illegal xml characters', function() {
+        it('should remove vertical tabs',function() {
+            var res = prep(weirdData);
+            expect(res.rows[0][1]).toEqual(' foo bar ');
+        });
+    });
 
     describe('when the data is an array', function() {
         
