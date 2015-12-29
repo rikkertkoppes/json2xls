@@ -1,6 +1,6 @@
 {
   "name": "json2xls",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "canonically transform json to an excel document",
   "main": "lib/json2xls.js",
   "scripts": {
