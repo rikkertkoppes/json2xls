@@ -153,6 +153,36 @@ describe('prepare',function() {
         });
     });
 
+    describe('working with missing fields',function() {
+        it('should leave missing fields blank',function() {
+            var res = prep([
+                {
+                    "firma": "transportabel",
+                    "internet": "http://www.transportabel.de",
+                    "Branche": "Möbel",
+                    "STRASSE": "Messingweg 49",
+                    "ort": "Münster-Sprakel",
+                    "TEL_ZENTRALE": "(0251) 29 79 46"
+                },
+                {
+                    "firma": "Soziale Möbelbörse & mehr e.V.",
+                    "internet": "http://www.gersch-ms.de",
+                    "Branche": "Möbel",
+                    "STRASSE": "Nienkamp 80",
+                    "ort": "Münster-Wienburg",
+                    "TEL_ZENTRALE": "(0251) 53 40 76"
+                },
+                {
+                    "firma": "Bald Eckhart e.K.",
+                    "Branche": "Möbel",
+                    "STRASSE": "Weseler Str. 628",
+                    "ort": "Münster-Mecklenbeck",
+                    "TEL_ZENTRALE": "(0251) 53 40 76"
+                }
+            ]);
+            expect(res.rows[2][1]).toEqual(null);
+        })
+    })
 
     describe('prepping with config',function() {
         it('should get a nested field',function() {
