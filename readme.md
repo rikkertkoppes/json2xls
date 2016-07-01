@@ -62,3 +62,25 @@ The following options are supported:
     - fields: either an array or map containing field configuration:
         - array: a list of names of fields to be exported, in that order
         - object: a map of names of fields to be exported and the types of those fields. Supported types are 'number','string','bool'
+
+Example:
+
+    var json2xls = require('json2xls');
+    var json = {
+        foo: 'bar',
+        qux: 'moo',
+        poo: 123,
+        stux: new Date()
+    }
+
+    //export only the field 'poo'
+    var xls = json2xls(json,{
+        fields: ['poo']
+    });
+
+    //export only the field 'poo' as string
+    var xls = json2xls(json,{
+        fields: {poo:'string'}
+    });
+
+    fs.writeFileSync('data.xlsx', xls, 'binary');
