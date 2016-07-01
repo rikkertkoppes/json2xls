@@ -33,6 +33,22 @@ describe('prepare',function() {
         });
     });
 
+    describe('when the data is an empty array', function() {
+        it('should create an empty config', function() {
+            var res = prep([]);
+            expect(res.cols).toEqual([]);
+            expect(res.rows).toEqual([]);
+        });
+    });
+
+    describe('when the data is an empty object', function() {
+        it('should create a config with one empty row', function() {
+            var res = prep({});
+            expect(res.cols).toEqual([]);
+            expect(res.rows).toEqual([[]]);
+        });
+    });
+
     describe('when the data is an array', function() {
         
         describe('cols',function() {
