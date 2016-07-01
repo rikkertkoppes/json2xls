@@ -44,7 +44,7 @@ Or use as express middleware. It adds a convenience `xls` method to the response
 
     app.use(json2xls.middleware);
 
-    app.get('/',function(res) {
+    app.get('/',function(req, res) {
         res.xls('data.xlsx', jsonArr);
     });
 
