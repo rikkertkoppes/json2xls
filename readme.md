@@ -66,7 +66,7 @@ Or use as a koa middleware. Same as `xls` method.
     app.use(json2xls.koaMiddleware);
 
     app.use(ctx => {
-        ctx.xls('data.xlsx', data);
+        ctx.xls('data.xlsx', jsonArr);
     });
 
 
