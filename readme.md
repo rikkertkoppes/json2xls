@@ -48,6 +48,28 @@ Or use as express middleware. It adds a convenience `xls` method to the response
         res.xls('data.xlsx', jsonArr);
     });
 
+Or use as a koa middleware. Same as `xls` method.
+
+    var jsonArr = [{
+        foo: 'bar',
+        qux: 'moo',
+        poo: 123,
+        stux: new Date()
+    },
+    {
+        foo: 'bar',
+        qux: 'moo',
+        poo: 345,
+        stux: new Date()
+    }];
+
+    app.use(json2xls.koaMiddleware);
+
+    app.use(ctx => {
+        ctx.xls('data.xlsx', jsonArr);
+    });
+
+
 Options
 -------
 
