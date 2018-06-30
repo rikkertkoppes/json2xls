@@ -4,7 +4,7 @@
 
 The utility for convert json to an excel file, based on [Node-Excel-Export](https://github.com/functionscope/Node-Excel-Export)
 
-===
+---
 
 ## Installation
 
@@ -12,7 +12,7 @@ The utility for convert json to an excel file, based on [Node-Excel-Export](http
 npm install json2xls
 ```
 
-===
+---
 
 ## Usage
 
@@ -60,7 +60,7 @@ app.get('/', (req, res) => {
 })
 ```
 
-===
+---
 
 ## Options
 
@@ -79,7 +79,7 @@ The following options are supported:
     - array: a list of names of fields to be exported, in that order
     - object: a map of names of fields to be exported and the types of those fields. Supported types are 'number','string','bool'
 
-===
+---
 
 ### Example:
 
