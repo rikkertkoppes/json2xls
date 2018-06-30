@@ -1,19 +1,20 @@
 # json2xls
-========
 
 [![Build Status](https://travis-ci.org/rikkertkoppes/json2xls.png?branch=master)](https://travis-ci.org/rikkertkoppes/json2xls)
 
 The utility for convert json to an excel file, based on [Node-Excel-Export](https://github.com/functionscope/Node-Excel-Export)
 
+===
+
 ## Installation
-------------
 
 ```sh
 npm install json2xls
 ```
 
+===
+
 ## Usage
-------
 
 Use to save as file:
 
@@ -59,8 +60,9 @@ app.get('/', (req, res) => {
 })
 ```
 
+===
+
 ## Options
--------
 
 As a second parameter to `json2xls` or a third parameter to `res.xls`, a map of options can be passed:
 
@@ -76,6 +78,8 @@ The following options are supported:
 - fields: either an array or map containing field configuration:
     - array: a list of names of fields to be exported, in that order
     - object: a map of names of fields to be exported and the types of those fields. Supported types are 'number','string','bool'
+
+===
 
 ### Example:
 
