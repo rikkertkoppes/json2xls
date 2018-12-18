@@ -33,9 +33,10 @@ describe('prepare',function() {
             var res = prep(weirdData);
             expect(res.rows[0][1]).toEqual(' foo bar ');
         });
-        it('should handle puncusation in headers',function() {
+        it('should handle punctuation in headers and return data in rows',function() {
           var res = prep(punctHeaderData);
-          expect(res.cols[0].caption).toEqual('h.i (test)/#%');
+          expect(res.rows[0][0]).toEqual(3);
+          
       });
     });
 
@@ -65,7 +66,7 @@ describe('prepare',function() {
             it('should create the correct cols',function() {
                 var res = prep(arrayData);
                 expect(res.cols).toEqualFields([{
-                    caption: 'name',
+                    caption: 'n.ame',
                     type: 'string'
                 },{
                     caption: 'date',

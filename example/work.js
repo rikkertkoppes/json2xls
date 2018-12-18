@@ -1,6 +1,6 @@
-var json2xls = require('./lib/json2xls');
+var json2xls = require('../lib/json2xls');
 var fs = require('fs');
-var punctHeaderData = require('./spec/punctHeaderData');
+var data = require('../spec/svData');
 var json = {
     foo: 'bar',
     qux: 'moo',
@@ -17,6 +17,6 @@ var json = {
 // var xls = json2xls(json,{
 //     fields: {poo:'string'}
 // });
-var xls = json2xls(punctHeaderData);
+var xls = json2xls(data);
 
 fs.writeFileSync('data.xlsx', xls, 'binary');
