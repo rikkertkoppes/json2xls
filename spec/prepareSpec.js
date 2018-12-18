@@ -4,29 +4,10 @@ var arrayData = require('./arrayData.json');
 var objectData = require('./objectData.json');
 var weirdData = require('./weirdData');
 var punctHeaderData = require('./punctHeaderData');
+var _ = require('lodash');
 
 
 describe('prepare',function() {
-
-    beforeEach(function() {
-        this.addMatchers({
-            toEqualFields: function() {
-                return {
-                    compare: function(actual,expected) {
-                        var res;
-                        var res = expected && expected.all && expected.all(function(item,i) {
-                            return actual[i] && Object.keys(item).all(function(field) {
-                                return actual[i][field] === item[field];
-                            });
-                        })
-                        return {
-                            pass: res
-                        }
-                    }
-                }
-            }
-        })
-    })
 
     describe('handling illegal characters', function() {
         it('should remove vertical tabs',function() {
@@ -59,14 +40,15 @@ describe('prepare',function() {
     describe('when the data is an array', function() {
         
         describe('cols',function() {
+          var res = prep(arrayData);
             it('should create a cols part',function() {
                 var res = prep(arrayData);
                 expect(res.cols).toBeDefined();
             });
             it('should create the correct cols',function() {
                 var res = prep(arrayData);
-                expect(res.cols).toEqualFields([{
-                    caption: 'n.ame',
+                expect(res.cols.map((el) => _.omit(el, ['beforeCellWrite']))).toEqual([{
+                    caption: 'name',
                     type: 'string'
                 },{
                     caption: 'date',
@@ -81,7 +63,7 @@ describe('prepare',function() {
                 var res = prep(arrayData,{
                     fields: ['date','name']
                 });
-                expect(res.cols).toEqualFields([{
+                expect(res.cols.map((el) => _.omit(el, ['beforeCellWrite']))).toEqual([{
                     caption: 'date',
                     type: 'string'
                 },{
@@ -95,9 +77,10 @@ describe('prepare',function() {
                     fields: {
                         number: 'string',
                         name: 'string'
+                        
                     }
                 });
-                expect(res.cols).toEqualFields([{
+                expect(res.cols.map((el) => _.omit(el, ['beforeCellWrite']))).toEqual([{
                     caption: 'number',
                     type: 'string'
                 },{
@@ -203,7 +186,7 @@ describe('prepare',function() {
                     "TEL_ZENTRALE": "(0251) 53 40 76"
                 }
             ]);
-            expect(res.rows[2][1]).toEqual(null);
+            expect(res.rows[2][1]).toBeNull();
         })
     })
 
@@ -216,3 +199,13 @@ describe('prepare',function() {
         })
     });
 });
+
+// Expected 
+// [ Object({ caption: 'date', type: 'string', beforeCellWrite: Function }), Object({ caption: 'name', type: 'string', beforeCellWrite: Function }) ] 
+// to equal fields 
+// [ Object({ caption: 'date', type: 'string' }), Object({ caption: 'name', type: 'string' }) ].
+
+// Expected 
+// [ Object({ caption: 'number', type: 'string', beforeCellWrite: Function }), Object({ caption: 'name', type: 'string', beforeCellWrite: Function }) ] 
+// to equal fields 
+// [ Object({ caption: 'number', type: 'string', beforeCellWrite: Function }), Object({ caption: 'name', type: 'string', beforeCellWrite: Function }) ].
