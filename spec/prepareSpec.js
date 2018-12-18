@@ -209,7 +209,6 @@ describe('prepare',function() {
                     "TEL_ZENTRALE": "(0251) 53 40 76"
                 }
             ]);
-            console.log(res.rows[1][1]);
             expect(res.rows[2][1]).toBeNull();
         })
     })
