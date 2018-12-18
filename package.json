@@ -15,5 +15,6 @@
   },
   "devDependencies": {
     "jasmine-node": "^1.16.2"
-  }
+  },
+  "engines" : { "node" : ">=4.0" }
 }
