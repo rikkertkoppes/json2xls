@@ -33,9 +33,9 @@ describe('prepare',function() {
             var res = prep(weirdData);
             expect(res.rows[0][1]).toEqual(' foo bar ');
         });
-        it('should handle .',function() {
+        it('should handle puncusation in headers',function() {
           var res = prep(punctHeaderData);
-          expect(res.rows[0][0]).toEqual('h.i');
+          expect(res.cols[0].caption).toEqual('h.i (test)/#%');
       });
     });
 
