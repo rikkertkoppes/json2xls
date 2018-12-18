@@ -9,29 +9,6 @@ var _ = require('lodash');
 
 describe('prepare',function() {
 
-    beforeEach(function() {
-        jasmine.addMatchers({
-            toEqualFields: function(util) {
-                return {
-                    compare: function(actual,expected) {
-                        var res;
-                        console.log(`compare actual:${JSON.stringify(actual)} with expected:${JSON.stringify(expected.all)}`);
-                        var res = expected && expected.all && expected.all(function(item,i) {
-                            return actual[i] && Object.keys(item).all(function(field) {
-                              console.log(actual[i][field]);
-                              console.log(item[field]);
-                                return actual[i][field] === item[field];
-                            });
-                        })
-                        return {
-                            pass: res
-                        }
-                    }
-                }
-            }
-        })
-    })
-
     describe('handling illegal characters', function() {
         it('should remove vertical tabs',function() {
             var res = prep(weirdData);
