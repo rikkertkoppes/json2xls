@@ -1,6 +1,6 @@
 {
   "name": "@aquajax/json2xls",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "canonically transform json to an excel document. This is a fork of Rikkert Koppes package of same name",
   "main": "lib/json2xls.js",
   "scripts": {
