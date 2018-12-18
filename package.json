@@ -1,15 +1,19 @@
 {
-  "name": "json2xls",
-  "version": "0.1.2",
-  "description": "canonically transform json to an excel document",
+  "name": "@aquajax/json2xls",
+  "version": "0.1.3",
+  "description": "canonically transform json to an excel document. This is a fork of Rikkert Koppes package of same name",
   "main": "lib/json2xls.js",
   "scripts": {
     "test": "jasmine-node spec"
   },
-  "repository": "https://github.com/rikkertkoppes/json2xls",
-  "author": "Rikkert Koppes <rikkert@rikkertkoppes.com",
+  "repository": "https://github.com/ge-hall/json2xls.git",
+  "author": "Andrew Ge-Hall <ge-hall@outlook.com",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "excel-export": "~0.3.11"
+    "excel-export": "~0.3.11",
+    "object-path": "^0.11.4"
+  },
+  "devDependencies": {
+    "jasmine-node": "^1.16.2"
   }
 }

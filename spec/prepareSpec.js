@@ -3,6 +3,8 @@ var prep = json2xls.prepareJson;
 var arrayData = require('./arrayData.json');
 var objectData = require('./objectData.json');
 var weirdData = require('./weirdData');
+var punctHeaderData = require('./punctHeaderData');
+
 
 describe('prepare',function() {
 
@@ -26,11 +28,15 @@ describe('prepare',function() {
         })
     })
 
-    describe('handling illegal xml characters', function() {
+    describe('handling illegal characters', function() {
         it('should remove vertical tabs',function() {
             var res = prep(weirdData);
             expect(res.rows[0][1]).toEqual(' foo bar ');
         });
+        it('should handle .',function() {
+          var res = prep(punctHeaderData);
+          expect(res.rows[0][0]).toEqual('h.i');
+      });
     });
 
     describe('when the data is an empty array', function() {
