@@ -1,5 +1,5 @@
 language: node_js
 node_js:
-  - 4.0
+  - 4.8.0
 before_script:
-  - "npm i -g jasmine-node@1.16.2"
+  - "npm i -g jasmine"

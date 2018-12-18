@@ -4,7 +4,7 @@
   "description": "Transform json to an excel document. This is a fork of Rikkert Koppes package of same name",
   "main": "lib/json2xls.js",
   "scripts": {
-    "test": "jasmine-node spec"
+    "test": "jasmine"
   },
   "repository": "https://github.com/ge-hall/json2xls.git",
   "author": "Andrew Ge-Hall <ge-hall@outlook.com",
@@ -14,7 +14,10 @@
     "object-path": "^0.11.4"
   },
   "devDependencies": {
-    "jasmine-node": "^1.16.2"
+    "jasmine": "^3.3.1",
+    "lodash": "^4.17.11"
   },
-  "engines" : { "node" : ">=4.0" }
+  "engines": {
+    "node": ">=4.8.0"
+  }
 }
