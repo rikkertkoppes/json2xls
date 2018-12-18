@@ -11,7 +11,7 @@ Attribution
 This package is a fork of rikkertkoppes/json2xls. The original package had an outstanding PR to address . char in column headers
 submitted by teliov.
 
-Unfortunately the original package has not been updated since 2015.
+Unfortunately the original package has not been updated since July 2016.
 
 Installation
 ------------
