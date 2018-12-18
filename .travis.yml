@@ -2,4 +2,4 @@ language: node_js
 node_js:
   - 4.0
 before_script:
-  - "npm i -g jasmine-node"
+  - "npm i -g jasmine-node@1.16.2"
