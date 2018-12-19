@@ -15,16 +15,24 @@ brace-expansion@^1.1.7:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
 
+collections@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/collections/-/collections-3.0.0.tgz#27e3894df1b24cedfc55a1bbb0c0da12f68bab31"
+  integrity sha1-J+OJTfGyTO38VaG7sMDaEvaLqzE=
+  dependencies:
+    weak-map "~1.0.x"
+
 concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
-excel-export@~0.3.11:
-  version "0.3.11"
-  resolved "https://registry.yarnpkg.com/excel-export/-/excel-export-0.3.11.tgz#6bf6b9d65555ebe3f0daeaa5732f7b69986a7eb4"
-  integrity sha1-a/a51lVV6+Pw2uqlcy97aZhqfrQ=
+excel-export@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/excel-export/-/excel-export-0.5.1.tgz#6d08787f98b2ec931e4b3dcff18cc9083bbb8b77"
+  integrity sha1-bQh4f5iy7JMeSz3P8YzJCDu7i3c=
   dependencies:
+    collections "^3.0.0"
     node-zip "1.x"
 
 fs.realpath@^1.0.0:
@@ -117,6 +125,11 @@ path-is-absolute@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/path-is-absolute/-/path-is-absolute-1.0.1.tgz#174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f"
   integrity sha1-F0uSaHNVNP+8es5r9TpanhtcX18=
+
+weak-map@~1.0.x:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/weak-map/-/weak-map-1.0.5.tgz#79691584d98607f5070bd3b70a40e6bb22e401eb"
+  integrity sha1-eWkVhNmGB/UHC9O3CkDmuyLkAes=
 
 wrappy@1:
   version "1.0.2"
