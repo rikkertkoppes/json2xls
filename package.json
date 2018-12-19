@@ -19,5 +19,10 @@
   },
   "engines": {
     "node": ">=4.8.0"
-  }
+  },
+  "keywords": [
+    "JSON",
+    "Excel",
+    "File"
+  ]
 }
