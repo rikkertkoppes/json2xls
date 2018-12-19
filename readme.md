@@ -1,8 +1,8 @@
 json2xls
 ========
 
-[![Build Status](https://travis-ci.org/ge-hall/json2xls.svg?branch=master)]
-(https://travis-ci.org/ge-hall/json2xls)
+[![npm version](https://badge.fury.io/js/%40aquajax%2Fjson2xls.svg)](https://badge.fury.io/js/%40aquajax%2Fjson2xls)
+[![Build Status](https://travis-ci.org/ge-hall/json2xls.svg?branch=master)](https://travis-ci.org/ge-hall/json2xls)
 
 utility to convert json to a excel file, based on [Excel-Export](https://github.com/functionscope/Node-Excel-Export)
 
