@@ -19,7 +19,7 @@
     "standard": "^12.0.1"
   },
   "engines": {
-    "node": ">=4.8.0"
+    "node": ">=6.14.0"
   },
   "keywords": [
     "JSON",
