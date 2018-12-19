@@ -1,9 +1,10 @@
 json2xls
 ========
 
-[![Build Status](https://travis-ci.org/rikkertkoppes/json2xls.png?branch=master)](https://travis-ci.org/rikkertkoppes/json2xls)
+[![Build Status](https://travis-ci.org/ge-hall/json2xls.svg?branch=master)]
+(https://travis-ci.org/ge-hall/json2xls)
 
-utility to convert json to a excel file, based on [Node-Excel-Export](https://github.com/functionscope/Node-Excel-Export)
+utility to convert json to a excel file, based on [Excel-Export](https://github.com/functionscope/Node-Excel-Export)
 
 Attribution
 -----------
@@ -24,6 +25,7 @@ Usage
 
 Use to save as file:
 
+```
     var json2xls = require('json2xls');
     var json = {
         foo: 'bar',
@@ -35,9 +37,10 @@ Use to save as file:
     var xls = json2xls(json);
 
     fs.writeFileSync('data.xlsx', xls, 'binary');
-
+```
 Or use as express middleware. It adds a convenience `xls` method to the response object to immediately output an excel as download.
 
+```
     var jsonArr = [{
         foo: 'bar',
         qux: 'moo',
@@ -56,7 +59,7 @@ Or use as express middleware. It adds a convenience `xls` method to the response
     app.get('/',function(req, res) {
         res.xls('data.xlsx', jsonArr);
     });
-
+```
 Options
 -------
 
@@ -74,6 +77,7 @@ The following options are supported:
 
 Example:
 
+```
     var json2xls = require('json2xls');
     var json = {
         foo: 'bar',
@@ -93,3 +97,42 @@ Example:
     });
 
     fs.writeFileSync('data.xlsx', xls, 'binary');
+```
+
+Downloading from front end app
+------------------------------
+
+The following example will process the output of json2xls for valid file download:
+
+```
+export const download = (data, filename, ext) => {
+  const decodeBase64 = (str) => {
+    try {
+      return window.atob(str);
+    } catch (e) {
+      return str;
+    }
+  };
+
+  const decoded = decodeBase64(data);
+  const buf = new ArrayBuffer(decoded.length);
+  const view = new Uint8Array(buf);
+  for (let i = 0; i !== decoded.length; ++i) {
+    view[i] = decoded.charCodeAt(i) & 0xFF;
+  }
+
+  const blob = new Blob([buf], {
+    type: 'application/octet-stream'
+  });
+
+  const a = window.document.createElement('a');
+  a.href = window.URL.createObjectURL(blob, {
+    type: `data:attachment/${ext}`
+  });
+  a.download = `${filename}.${ext}`;
+
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+};
+```
