@@ -10,7 +10,7 @@
   "author": "Andrew Ge-Hall <ge-hall@outlook.com",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "excel-export": "~0.3.11",
+    "excel-export": "^0.5.1",
     "object-path": "^0.11.4"
   },
   "devDependencies": {

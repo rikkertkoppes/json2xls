@@ -3,7 +3,7 @@ var fs = require('fs');
 var data = require('../spec/objectData');
 var json = [
   {
-      "firma": "transportabel",
+      "firma.*": "transportabel",
       "internet": "http://www.transportabel.de",
       "Branche": "Möbel",
       "STRASSE": "Messingweg 49",
@@ -11,7 +11,7 @@ var json = [
       "TEL_ZENTRALE": "(0251) 29 79 46"
   },
   {
-      "firma": "Soziale Möbelbörse & mehr e.V.",
+      "firma.*": "Soziale Möbelbörse & mehr e.V.",
       "internet": "http://www.gersch-ms.de",
       "Branche": "Möbel",
       "STRASSE": "Nienkamp 80",
@@ -19,7 +19,7 @@ var json = [
       "TEL_ZENTRALE": "(0251) 53 40 76"
   },
   {
-      "firma": "Bald Eckhart e.K.",
+      "firma.*": "Bald Eckhart e.K.",
       //"internet": null,
       "Branche": "Möbel",
       "STRASSE": "Weseler Str. 628",
